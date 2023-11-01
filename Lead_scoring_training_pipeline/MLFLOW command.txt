@@ -1,0 +1,14 @@
+1.  Use absolute paths to avoid errors.
+
+2.  Always run mlflow command at the path where you have mlruns folder.
+
+
+3.  For model experimentation, we used mlruns created in /home/Assignment i.e. we ran the command in /home/Assignment path.
+
+
+4.  For training pipeline, we used mlruns in /home. This is because during inference, airflow loads model from /home/mlruns:
+
+cd /home
+mlflow server --backend-store-uri='sqlite:////home/airflow/dags/Lead_scoring_training_pipeline/lead_scoring_mlflow_production.db' --default-artifact-root="./mlruns" --port=6006 --host=0.0.0.0
+
+5.  Airflow credentials: shweta/pwd-admin
